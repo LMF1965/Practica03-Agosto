@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Practicas Agosto ::Piedra Papel Tijera::</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+  <link type="text/css" rel="stylesheet" media="screen" href="css/normalize.css" />
+  <link type="text/css" rel="stylesheet" media="screen" href="css/styles.css" />
+  <link type="text/css" rel="stylesheet" media="screen" href="css/stylesPPT.css" />
+  <link type="text/css" rel="stylesheet" media="screen" href="css/fontello.css" />
+
+</head>
+
+<body>
+  <div id="identificado" class="identificado ">
+    <div>
+      <input id="btnVolverIndex" class="btn radius5" type="button" value="Volver">
+    </div>
+    <div>
+      <span class="icon-user"></span><span id="nomUser"></span><input id="btnLogout" class="btn radius5" type="button" value="LogOut">
+    </div>
+  </div>  
+    <h1>Practica Agosto: Piedra Papel Tijera</h1>
+    <main class="containerPPT" >
+      <div class="jugador" >
+        <div class="marcador" id="marcadorIzq"></div>
+        <!-- <div class="avatar sombraTexto" ><span class="icon-user"></span></div> -->
+        <div><img class="sombraPng" src="img/usuario.png" alt="" id="usuario"/></div>
+        <div class="nombre sombraTexto" id="userAvatar">Louisse</div>
+        <div class="ContenedorQueSaca">
+          <img class="queSacaDer quesaca radius5 sombra"id="queSacaIzq" src="img/FondoPPT.jpg" alt="">
+          <img id="resultadoHumano" src="img/gana.png" alt="">
+          
+        </div>
+        <!-- <div class=""><input type="button" value="Piedra" id="btnPiedra"><input type="button" value="Papel" id="btnPapel"><input type="button" value="Tijera" id="btnTijera"></div> -->
+  
+
+      </div>
+      <div class="maquina" >
+        <div class="marcador" id="marcadorDer"></div>
+        <div><img class="sombraPng" src="img/hal-9000.png" alt="" id="hal9000"/></div>
+ 
+        <div class="nombre sombraTexto">Hal-9000</div>
+        <div class="ContenedorQueSaca">
+          <img class="queSacaDer quesaca radius5 sombra" id="queSacaDer" src="img/FondoPPT.jpg" alt="">
+          <img id="resultadoMaquina" src="img/gana.png" alt="">
+        </div>
+        
+      </div> 
+      <div class="parteControl">
+      <div class="queSaco radius5 sombra">
+        <div class="queSaco__item sombra" id="btnPiedra"><img class="sombraPng" src="img/sacarPiedra.png" alt="Sacar Piedra"></div>
+        <div class="queSaco__item sombra" id="btnPapel"><img class="sombraPng" src="img/sacarPapel.png" alt="Sacar Papel"></div>
+        <div class="queSaco__item sombra" id="btnTijera"><img class="sombraPng" src="img/sacarTijera.png" alt="Sacar Tijera"></div>         
+      </div>
+      <div class="tiempoJugada radius5 sombra" id="tiempoJugada">
+        <div class="vacio" id="tiempoJugadaProgreso"></div>         
+      </div>      
+      <div class="botones"><input id="btnJugar" type="button" value="Empezar" class="btn"></div>   
+    </div>      
+  </main>
+  <div class="modal" id="modal">
+    <div class="modalcontenido radius5 sombra">
+            <div class="btnVolver" id="btnVolver">X</div>
+            <div>Introduzca un usuario para jugar</div>
+            <div class="login radius5 sombra">
+              <label for="user">Usuario:</label>
+              <input type="text" name="user" id="user" placeholder="Usuario">
+            
+            <div id="avisoError" class="oculto">
+              Usuario Obligatorio
+            </div>
+          <div  class="partidas">
+            <label for="partidas">Número de partidas para ganar:</label>
+            <input type="text" name="partidas" id="partidas" value="3" size="3" >
+          </div>
+          </div>
+            <div class="btnLogin">
+              <input id="btnLogin" class="btn radius5" type="button" value="Entrar">
+            </div>
+
+
+    </div>
+  </div> 
+  <div class="modal" id="podium">
+    <div class="modalcontenido radius5 sombra" id="elPodium">
+            <div class="btnVolver" id="btnVolverPodium">X</div>
+            <div id="ganadorImg"></div>
+            <div id="ganadorNom" class="sombraTexto"></div>
+            <div class="volverJugar">
+              <input id="btnVolverJugar" class="btn radius5" type="button" value="Volver a jugar">
+            </div>
+
+
+    </div>
+  </div> 
+<script src="js/PPT.js"></script>
+</body>
+</html>

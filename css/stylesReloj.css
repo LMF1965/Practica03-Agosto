@@ -1,0 +1,366 @@
+body{
+  width:100vw;
+  height: 100vh;
+}
+.mainContainer{
+  /* background-color: chocolate; */
+  width: 90%;
+
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: none;
+}
+.cabecera{
+  padding: 5px 38px 0 38px;
+}
+h1 {
+  margin-top: 7px;
+}
+.reloj, .reloj__esfera{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.reloj{
+  /* background-color: crimson; */
+  width:  500px;
+  height: 500px;
+  position: relative;
+  
+}
+.reloj__esfera{
+  width: 90%;
+  height: 90%;
+  background: rgb(145,42,71);
+  background: linear-gradient(111deg, rgba(145,42,71,1) 0%, rgba(222,0,63,1) 19%, rgba(255,255,255,1) 53%, rgba(247,143,0,1) 100%);
+  border-radius: 50%;
+  border:4px solid darkslategrey;
+ 
+  
+}
+.reloj__marcasHoras, .unahora, .ejeVertical, .ejeHorizontal, .dia, .mes, #manecillaHoras, #manecillaMinutos, #manecillaSegundos, .marca{
+  position: absolute;
+  display: block;
+  font-size: 1.3em;
+  font-weight: bold;
+
+}
+.reloj__marcasHoras{
+  width: 85%;
+  height:85%;
+  border-radius: 50%;
+  background: rgb(254,255,254);
+  background: linear-gradient(360deg, rgba(254,255,254,1) 0%, rgba(224,224,224,0.9838557401812689) 100%);
+  box-shadow: inset 3px 3px 3px rgba(255,255,255,.7), inset -2px -2px 3px rgba(0,0,0,.1), 2px 2px 10px rgba(0,0,0,.1);
+}
+
+.unahora::before{
+  content:"";
+  position:absolute;
+  width:10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: black;
+}
+.marca{
+  top: 31%;
+  left: 42.5%;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.75);
+}
+#doce{
+  top: 4%;
+  left: 46.5%;
+}
+#doce::before{
+  top:-9px;
+  left:10px;
+}
+#una{
+  top: 10%;
+  left: 69%
+}
+#una::before{
+  top:-30%;
+  left:95%;
+}
+#dos{
+  top: 25%;
+  left: 84%;
+}
+#dos::before{
+  top: 8%;
+  left: 154%
+}
+#tres{
+  top: 46.3%;
+  left: 91%;
+}
+#tres::before{
+  top:35%;
+  left:130%;
+}
+#cuatro{
+  top: 68.1%;
+  left: 85%;
+}
+#cuatro::before{
+  top:54%;
+  left:130%;
+}
+#cinco{
+  top: 83.1%;
+  left: 69%;
+}
+#cinco::before{
+  top:86%;
+  left:91%;
+}
+#seis{
+  top: 88%;
+  left: 48.1%;
+}
+#seis::before{
+  top:32px;
+  left:4px;
+}
+#siete{
+  top: 82%;
+  left: 28.1%;
+}
+#siete::before{
+  top: 105%;
+  left: -70%;
+}
+#ocho{
+  top: 68%;
+  left: 12%;
+}
+#ocho::before{
+  top: 58%;
+  left: -114%;
+}
+#nueve{
+  top: 46.3%;
+  left: 5%;
+}
+#nueve::before{
+  top:35%;
+  left:-85%;
+}
+#diez{
+  top: 26%;
+  left: 10%;
+}
+#diez::before{
+  top:-10%;
+  left:-30%;
+}
+#once{
+  top: 10%;
+  left: 25%;
+}
+#once::before{
+  top:-30%;
+  left:6%;
+}
+.dia, .mes{
+  font-size: 1em;
+  border:1px solid black;
+  padding:2px;
+  background-color: black;
+  color:white;
+  box-shadow: inset 3px 3px 3px rgba(255,255,255,.7), inset -2px -2px 3px rgba(0,0,0,.1), 2px 2px 10px rgba(0,0,0,.1);
+}
+.dia{
+  top: 46.6%;
+  left: 71%;
+}
+.mes{
+  top: 46.6%;
+  left: 79%;
+}
+.marcaMinutos{
+  position: absolute;
+  display: block;
+  width: 80%;
+  height:83%;
+  background-color: black;
+  clip-path: polygon(49.9% 0, 50.1% 0, 50.1% 3%, 49.9% 3%);
+}
+.marca1{
+  transform: rotate(6deg);
+}
+.marca2{
+  transform: rotate(12deg);
+}
+.marca3{
+  transform: rotate(18deg);
+}
+.marca4{
+  transform: rotate(24deg);
+}
+.marca6{
+  transform: rotate(36deg);
+}
+.marca7{
+  transform: rotate(42deg);
+}
+.marca8{
+  transform: rotate(48deg);
+}
+.marca9{
+  transform: rotate(54deg);
+}
+.marca11{
+  transform: rotate(66deg);
+}
+.marca12{
+  transform: rotate(72deg);
+}
+.marca13{
+  transform: rotate(78deg);
+}
+.marca14{
+  transform: rotate(84deg);
+}
+.marca16{
+  transform: rotate(96deg);
+}
+.marca17{
+  transform: rotate(102deg);
+}
+.marca18{
+  transform: rotate(108deg);
+}
+.marca19{
+  transform: rotate(114deg);
+}
+.marca21{
+  transform: rotate(126deg);
+}
+.marca22{
+  transform: rotate(132deg);
+}
+.marca23{
+  transform: rotate(138deg);
+}
+.marca24{
+  transform: rotate(144deg);
+}
+.marca26{
+  transform: rotate(156deg);
+}
+.marca27{
+  transform: rotate(162deg);
+}
+.marca28{
+  transform: rotate(168deg);
+}
+.marca29{
+  transform: rotate(174deg);
+}
+.marca31{
+  transform: rotate(186deg);
+}
+.marca32{
+  transform: rotate(192deg);
+}
+.marca33{
+  transform: rotate(198deg);
+}
+.marca34{
+  transform: rotate(204deg);
+}
+.marca36{
+  transform: rotate(216deg);
+}
+.marca37{
+  transform: rotate(222deg);
+}
+.marca38{
+  transform: rotate(228deg);
+}
+.marca39{
+  transform: rotate(234deg);
+}
+.marca41{
+  transform: rotate(246deg);
+}
+.marca42{
+  transform: rotate(252deg);
+}
+.marca43{
+  transform: rotate(258deg);
+}
+.marca44{
+  transform: rotate(264deg);
+}
+.marca46{
+  transform: rotate(276deg);
+}
+.marca47{
+  transform: rotate(282deg);
+}
+.marca48{
+  transform: rotate(288deg);
+}
+.marca49{
+  transform: rotate(294deg);
+}
+.marca51{
+  transform: rotate(306deg);
+}
+.marca52{
+  transform: rotate(312deg);
+}
+.marca53{
+  transform: rotate(318deg);
+}
+.marca54{
+  transform: rotate(324deg);
+}
+.marca56{
+  transform: rotate(336deg);
+}
+.marca57{
+  transform: rotate(342deg);
+}
+.marca58{
+  transform: rotate(348deg);
+}
+.marca59{
+  transform: rotate(354deg);
+}
+
+#manecillaHoras,#manecillaMinutos,#manecillaSegundos{
+  width: 80%;
+  height:80%;
+  background-color: black ;
+}
+#manecillaHoras{
+  clip-path: polygon(49.7% 20%, 50.3% 20%, 51% 50%, 49% 50%);
+  transform: rotate(0deg);
+
+}
+#manecillaMinutos{
+  clip-path: polygon(49.7% 10%, 50.3% 10%, 51% 50%, 49% 50%);
+  transform: rotate(0deg);
+}
+#manecillaSegundos{
+  background-color:rgb(182, 1, 1);
+  clip-path: polygon(49.7% 5%, 50.3% 5%, 51% 57%, 49% 57%);
+  transform: rotate(0deg);
+
+}
+.centro{
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: rgb(182, 1, 1);
+  top: 48%;
+  left: 48%;
+}

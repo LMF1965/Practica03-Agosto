@@ -1,0 +1,318 @@
+h1{
+    margin-top:7px;
+}
+.containerSimon{
+    width:95%;
+    margin-left: auto;
+    margin-right:auto;
+    display:grid;
+    grid-template-columns: 1fr 450px 1fr;
+    grid-gap: 10px;
+    /* border:1px solid black;  */
+
+}
+.containerSimon >div{
+    padding:10px;
+}
+#maquinaSimon{
+
+    -webkit-filter: drop-shadow(5px 5px 5px #222 );
+    filter: drop-shadow(5px 5px 5px #222);
+}
+#divMaquinaSimon{
+    grid-column: 1 / 3;
+    text-align: center;
+    position: relative;
+    height: 500px;
+}
+.btnMaquina{
+    cursor: pointer;
+}
+
+.btnPulsado{
+    stroke:"#fff";
+}
+.contador{
+    display:flex;
+    justify-content: center;
+    align-content:center ;
+    position: relative;
+    font-size: 2.5em;
+
+    font-family: 'Black Ops One', cursive;
+    background: rgb(254,255,254);
+    background: linear-gradient(360deg, rgba(254,255,254,1) 0%, rgba(224,224,224,0.9838557401812689) 100%);
+    box-shadow: inset 3px 3px 3px rgba(255,255,255,.7), inset -2px -2px 3px rgba(0,0,0,.1), 2px 2px 10px rgba(0,0,0,.1);
+    width: 70px;
+    height:46px;
+    color:rgb(96, 9, 196);
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.75);
+    /* top:54%;
+    left:45%; */
+    border: 2px solid #fff;
+    margin: -240px auto;
+
+}
+.contador >span{
+    position:absolute;
+    color:white;
+    top: -45px;
+    left: -32px;
+}
+.barraBoton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, .5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: scale(0);
+    transition:transform .3s;
+    scroll-behavior: inherit;
+}
+.modalcontenido{
+    position:relative;
+    background: linear-gradient(360deg, rgba(254,255,254,1) 0%, rgba(224,224,224,0.9838557401812689) 100%);
+    width:25vw;
+    padding:10px;
+}
+.show{
+    transform: scale(1);
+}
+.login{
+    display: flex;
+    flex-direction: column;
+    padding:5px 15px 15px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    background: rgb(2,0,36);
+    background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(35,78,66,1) 0%, rgba(13,110,130,1) 100%);
+    color:white;
+  }
+  .login >div >label{
+    display:block;
+    border:none;
+    text-align: left;
+    margin-top: 13px;color:#fff;
+  }
+  .login>div>input{
+    width: 98%;
+    border-bottom: #000 2px solid;;
+    border-top: none;
+    border-left: none;
+    border-right:none;
+  }  
+  .errorLogin{
+    background-color: rgb(212, 71, 71);
+  }
+  .btnLogin{
+      text-align: center;
+  }
+  #avisoError{
+    background: white;
+    color: red;
+    text-align: center;
+    width: 98%;
+    margin: 3px auto;
+  }
+  .identificado{
+    display:flex;
+    justify-content: space-between;
+    text-align: right;
+    padding:5px 38px 0 38px;
+  }
+  #btnLogout{
+      margin-left:5px;
+  }
+  .btnVolver{
+      position: absolute;
+      top: -7%;
+      left: 96%;
+      border-radius: 50%;
+      width:20px;
+      height:20px;
+      background-color: black;
+      color:white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding:2px;
+      font-weight: bold;
+      border:2px solid white;
+  }
+  .btnVolver:hover{
+    background: #ec9601;
+    color:#fff;
+    -webkit-box-shadow: 0px 0px 12px 3px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 12px 3px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 12px 3px rgba(0,0,0,0.75);
+
+  }
+
+  .saludo{
+      font-size: 1.4em;
+      color:black;
+  }
+  .imgSalon{
+    -webkit-filter: drop-shadow(5px 5px 5px #222 );
+    filter: drop-shadow(5px 5px 5px #222);
+      width:100%;
+  }
+
+
+.salon{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    position:relative;
+    background-color:#4f7382;
+    width: 90%;
+    margin: 10px auto;
+    border:2px solid #8dadba;
+}
+
+.salon__cabecera{
+    text-align: center;
+    font-size: 1.2em;
+    line-height: 1.4em;
+    color:#ffffff;
+    border-bottom: 1px solid black;
+}
+.bold{
+    font-weight: bold;
+    line-height: 1.5em;
+    color:white;
+}
+.sinBorderBottom{
+    border-bottom:none;
+}
+.fondoClaro{
+background-color:#8dadba;
+}
+.salon__cabeceraUsuario{
+    grid-column: 1/3;
+}
+.salon__notaSalon{
+    margin-top: 20px;
+    text-align: center;
+    font-size: .9em;
+    font-weight: bold;
+}
+.sinSalonFama{
+    grid-column: 1/-1;
+    text-align: center;
+    padding :20px;
+}
+.sinSalonFama >img{
+    -webkit-filter: drop-shadow(5px 5px 5px #222 );
+    filter: drop-shadow(5px 5px 5px #222);
+}
+.progreso{
+    display:flex;
+    width:100%;
+    justify-content: center;
+    margin:10px auto;
+    
+}
+.progreso__marca{
+    width:15px;
+    height: 15px;
+    background-color: grey;
+    border:1px solid black;
+    border-radius: 50%;
+    margin-left: 3px;
+    box-shadow: inset 3px 3px 3px rgba(255,255,255,.7), inset -2px -2px 3px rgba(0,0,0,.1), 3px 3px 10px rgba(0,0,0,.8);
+}
+.progreso__marca--tocadoSimon{
+    background-color: blue;
+}
+.progreso__marca--tocadoUsuario{
+    background-color: rgb(4, 255, 4);
+}
+.progreso__marca--Error{
+    background-color: red;
+}
+#btnEmpezarRonda{
+margin-top:7px;
+}
+.contenedorContador{
+    position: relative;
+    width: 130px;
+    margin:0 auto;
+}
+.quienDice{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Black Ops One', cursive;
+    font-size: 1.5em;
+    color:white;
+    top: -88px;
+    left: -12px;
+    width: 159px;
+    height: 30px;
+    text-shadow: 0px 0px 10px #fff;
+}
+.moverContador{
+    position: absolute;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    color:white;
+    left: 106px;
+    width: 23px;
+    height: 23px;
+    box-shadow: inset 3px 3px 3px rgba(255,255,255,.7), inset -2px -2px 3px rgba(0,0,0,.1), 2px 2px 10px rgba(0,0,0,.1);
+}
+.moverContador:hover{
+    cursor:pointer;
+    color:red;
+    /* box-shadow: inset 0px 0px 0px rgba(255,255,255,.7), inset -2px -2px 3px rgba(0,0,0,.1), 2px 2px 10px rgba(0,0,0,.1); */
+}
+#subirRonda{
+    top:0;   
+}
+#bajarRonda{
+    top:26px;   
+}
+.tiempoJugada{
+    /* position: absolute;
+    top: 530px;
+    left: 288px; */
+    width: 360px;
+    height: 25px;
+    background: rgba(235,233,249,1);    
+    background: linear-gradient(to bottom, rgba(235,233,249,1) 0%, rgba(216,208,239,1) 50%, rgba(206,199,236,1) 51%, rgba(193,191,234,1) 100%);
+    border: 1px solid grey;
+}
+#tiempoJugadaProgreso{
+    height:98%;
+    background: rgba(239,197,202,1);
+    background: linear-gradient(to bottom, rgba(248,80,50,1) 0%, rgba(241,111,92,1) 50%, rgba(246,41,12,1) 51%, rgba(240,47,23,1) 71%, rgba(231,56,39,1) 100%);
+
+}
+.vacio{
+    width:0;
+}
+.lleno{
+    transition: all 5s linear;
+    width:100%;
+
+}
+
+@media screen and (max-width: 768px) {
+    .containerSimon {
+      grid-template-columns: 1fr;
+    }
+  }

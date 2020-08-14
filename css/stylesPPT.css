@@ -1,0 +1,294 @@
+h1{
+    margin-top:7px;
+}
+.modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, .5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: scale(0);
+    transition:transform .3s;
+    scroll-behavior: inherit;
+}
+.modalcontenido{
+    position:relative;
+    background: linear-gradient(360deg, rgba(254,255,254,1) 0%, rgba(224,224,224,0.9838557401812689) 100%);
+    width:25vw;
+    padding:10px;
+}
+.show{
+    transform: scale(1);
+}
+.login{
+    display: flex;
+    flex-direction: column;
+    padding:5px 15px 15px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    background: rgb(2,0,36);
+    background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(35,78,66,1) 0%, rgba(13,110,130,1) 100%);
+    color:white;
+  }
+  .login >div >label{
+    display:block;
+    border:none;
+    text-align: left;
+    margin-top: 13px;color:#fff;
+  }
+  .login>div>input{
+    width: 98%;
+    border-bottom: #000 2px solid;;
+    border-top: none;
+    border-left: none;
+    border-right:none;
+  }  
+  .errorLogin{
+    background-color: rgb(212, 71, 71);
+  }
+  #partidas{
+    width: 20px;
+    margin-top: 13px;
+    text-align: center;
+    margin-left: 5px;
+  } 
+  .btnLogin{
+      text-align: center;
+  }
+  #avisoError{
+    background: white;
+    color: red;
+    text-align: center;
+    width: 98%;
+    margin: 3px auto;
+  }
+  .btnVolver{
+    position: absolute;
+    top: -7%;
+    left: 96%;
+    border-radius: 50%;
+    width:20px;
+    height:20px;
+    background-color: black;
+    color:white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding:2px;
+    font-weight: bold;
+    border:2px solid white;
+}
+.btnVolver:hover{
+  background: #ec9601;
+  color:#fff;
+  -webkit-box-shadow: 0px 0px 12px 3px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 12px 3px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 12px 3px rgba(0,0,0,0.75);
+
+}
+
+.identificado{
+    display:flex;
+    justify-content: space-between;
+    text-align: right;
+    padding:5px 38px 0 38px;
+  }
+  #btnLogout{
+      margin-left:5px;
+  }
+  .partidas{
+      display:flex;
+      flex-direction: row;
+  }
+.containerPPT{
+    width:95%;
+    margin-left: auto;
+    margin-right:auto;
+    display:grid;
+    grid-template-columns: 1fr  1fr;
+    grid-gap: 10px;
+    /* border:1px solid black;  */
+
+}
+.containerPPT >div{
+    padding:1px;
+}
+.avatar{
+    font-size: 2.2em;
+}
+.nombre{
+    font-size: 2em;
+}
+.jugador, .maquina{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.quesaca{
+    position:relative;
+    border:1px solid #000;
+}
+#resultadoHumano, #resultadoMaquina{
+    position:absolute;
+    top:-39px;
+    left:211px;
+    display:none;
+}
+#tiempoAgotadoIzq, #tiempoAgotadoDer{
+    display:none;
+}
+#resultadoMaquina{
+    left:-40px;
+}
+
+.visible{
+    display:block;
+}
+.quesacaIzq{      
+  
+    width: 100%;
+    max-width: 250px;
+}
+.ContenedorQueSaca{
+    text-align: center;
+    position:relative;
+}
+.queSacaDer{          
+    width: 100%;
+    max-width: 250px;
+}
+
+.parteControl{
+    display: flex;
+    flex-direction: column;
+    align-items: center
+}
+
+.sacaPiedraIzq{
+    background-image: url("Piedra_Izq.gif");
+}
+.sacaPapelIzq{
+    background-image: url("Papel_Izq.gif");
+}
+.sacaTijeraIzq{
+    background-image: url("Tijera_Izq.gif");
+}
+.sacaPiedraDer{
+    background-image: url("Piedra_Der.gif");
+}
+.sacaPapelDer{
+    background-image: url("Papel_Der.gif");
+}
+.sacaTijeraDer{
+    background-image: url("Tijera_Der.gif");
+}
+.queSaco{
+    margin: 10px 0;
+    display:flex;
+    width: 350px;
+    justify-content: space-around;
+    align-items: center;
+    border:1px solid black;
+    padding:10px 5px;
+    background: rgba(235,233,249,1);    
+    background: linear-gradient(to bottom, rgba(235,233,249,1) 0%, rgba(216,208,239,1) 50%, rgba(206,199,236,1) 51%, rgba(193,191,234,1) 100%);
+}
+.queSaco__item{
+    cursor: pointer;
+    border-radius: 50%;
+    border: 2px solid black;
+    background: rgb(145,42,71);
+    background: linear-gradient(111deg, rgba(145,42,71,1) 0%, rgba(222,0,63,1) 19%, rgba(255,255,255,1) 53%, rgba(247,143,0,1) 100%);
+}
+.queSaco__item:hover{
+    border:2px solid red;
+}
+.noSeleccionado{
+    opacity: 0.5;
+}
+.marcador{
+    display:flex;
+    width:100%;
+    justify-content: center;
+    margin:10px auto;
+    
+}
+.marcador__marca{
+    width:15px;
+    height: 15px;
+    background-color: grey;
+    border:1px solid black;
+    border-radius: 50%;
+    margin-left: 3px;
+    box-shadow: inset 3px 3px 3px rgba(255,255,255,.7), inset -2px -2px 3px rgba(0,0,0,.1), 3px 3px 10px rgba(0,0,0,.8);
+}
+.marcador__marca--ganado{
+    background-color: rgb(56, 252, 30);
+}
+.tiempoJugada{
+    width: 360px;
+    height: 25px;
+    background: rgba(235,233,249,1);    
+    background: linear-gradient(to bottom, rgba(235,233,249,1) 0%, rgba(216,208,239,1) 50%, rgba(206,199,236,1) 51%, rgba(193,191,234,1) 100%);
+    border: 1px solid grey;
+}
+#tiempoJugadaProgreso{
+    height:98%;
+    background: rgba(239,197,202,1);
+    background: linear-gradient(to bottom, rgba(248,80,50,1) 0%, rgba(241,111,92,1) 50%, rgba(246,41,12,1) 51%, rgba(240,47,23,1) 71%, rgba(231,56,39,1) 100%);
+
+}
+.vacio{
+    width:0;
+}
+.lleno{
+    transition: all 5s linear;
+    width:100%;
+
+}
+.botones{
+    margin-top:20px;
+}
+.sinTransicion{
+    transition:none;
+}
+.invisible{
+    visibility: hidden;
+    /* display: none; */
+}
+#elPodium{
+    width: 500px;
+    height:416px;
+    background-image: url("../img/podium.jpg");
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    font-size: 2.5em
+}
+.volverJugar{
+    position:absolute;
+    bottom:12px;
+}
+#ganadorImg{
+    margin-top:28px;
+}
+#ganadorNom{
+    margin-top:42px;
+}
+#btnVolverPodium{
+    top:-14px;
+    left:97%;
+    font-size:.5em;
+}
+@media screen and (max-width: 768px) {
+.nombre{
+      font-size: 1.5em;
+}
+
+  }
