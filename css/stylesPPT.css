@@ -264,7 +264,7 @@ h1{
 #elPodium{
     width: 500px;
     height:416px;
-    background-image: url("../img/podium.jpg");
+    background-image: url("../img/Podium.jpg");
     display:flex;
     flex-direction: column;
     align-items: center;
