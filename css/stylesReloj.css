@@ -67,7 +67,7 @@ h1 {
 }
 .marca{
   top: 31%;
-  left: 42.5%;
+  left: 41.4%;
   text-shadow: 2px 2px 5px rgba(0,0,0,0.75);
 }
 #doce{
@@ -363,4 +363,24 @@ h1 {
   background-color: rgb(182, 1, 1);
   top: 48%;
   left: 48%;
+}
+@media screen and (max-width: 480px) {
+.reloj{
+  width: 400px;
+  height: 400px;
+}
+.reloj__marcasHoras, .unahora, .dia, .mes, #manecillaHoras, #manecillaMinutos, #manecillaSegundos, .marca {
+  position: absolute;
+  display: block;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+.dia{
+  left:70%;
+  font-size:.9em;
+}
+.mes{
+  left:78%;
+  font-size:.9em;
+}
 }
