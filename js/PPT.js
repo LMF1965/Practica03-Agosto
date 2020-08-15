@@ -316,7 +316,8 @@ btnVolverJugar.addEventListener('click',()=>{
 })
 tiempoJugadaProgreso.addEventListener("transitionend",()=>{
     if(controlarFinDeTransicion) {
-
+        audio = new Audio('assets/audio/error.mp3');
+        audio.play()
         queSacaIzq.src="img/TiempoAgotado.jpg"
         queSacaDer.src="img/FondoPPT.jpg"
 
