@@ -1,8 +1,9 @@
 body{
-  background: rgb(254,255,254);
+  background: black;
   background: linear-gradient(360deg, rgba(254,255,254,1) 0%, rgba(224,224,224,0.9838557401812689) 100%);
-  background-image: url("fondoBody.png");
-  background-repeat: repeat;
+  background-image: url("fondoBody3.png"),url("fondoBody3.jpg");
+  background-position-y:center;
+  background-repeat: no-repeat, repeat;
   font-family: 'Roboto', sans-serif;
   width: 100vw;
   height:100vh;
@@ -15,7 +16,9 @@ body{
     margin: 0.1em 0;
     font-weight: normal;
     background: #12b0a2;
+    /* background-image: url("fondoH13.jpg"); */
     color: rgb(167, 245, 241);
+    color:white;
     text-align: center;
   }
   h2{

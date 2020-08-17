@@ -193,6 +193,16 @@
         </svg>        
       </div>
 
+      <div class="contenedorContador">
+         <div class="quienDice" id="quienDice">&nbsp;</div> 
+         <div id="marcadorCentral">
+            <div id="texto-Ronda">Ronda</div>
+            <div class="contador radius5" id="contador-Ronda">33</div>
+         </div>
+         <div class="moverContador radius5" id="subirRonda"><span class="icon-up-dir"></span></div>
+         <div class="moverContador radius5" id="bajarRonda"><span class="icon-down-dir"></span></div>
+      </div>
+
   
         <div class="barraBoton">
           <div class="tiempoJugada radius5 sombra" id="barraTiempo"> 
@@ -202,19 +212,12 @@
           <input id="btnEmpezarRonda" class="btn radius5" type="button" value="Empezar Ronda">
          </div>
         </div>
-        <div class="contenedorContador">
-         <div class="quienDice" id="quienDice"></div> 
-         <div class="contador radius5" id="contador"><span>Ronda</span>ssss</div>
-         <div class="moverContador radius5" id="subirRonda"><span class="icon-up-dir"></span></div>
-         <div class="moverContador radius5" id="bajarRonda"><span class="icon-down-dir"></span></div>
-        </div>
+
 
       </div>
       <div>
         <img src="img/ribbonsalonfama.png" alt="Cabecera de la lista del salon de la fama" class="imgSalon">
-        <div class="salon radius5 sombra" id="SalonFamaTabla">
-
-        </div>
+        <div class="salon radius5 sombra" id="SalonFamaTabla"></div>
         <div class="salon__notaSalon sombraTexto">Para entrar en el Salon de la Fama tienes que pasar la Ronda 5</div>
       </div>  
   </main>
@@ -239,8 +242,8 @@
   <div class="modal" id="finPartida">
    <div class="modalcontenido radius5 sombra">
            <div class="btnVolver" id="btnVolverFin">X</div>
-           <div>Partida Finalizada</div>
-           <div id="resultado">---</div>
+           <h2>Partida Finalizada</h2>
+           <div id="resultado"></div>
 
            <div class="btnLogin">
              <input id="jugarOtraVez" class="btn radius5" type="button" value="Jugar de Nuevo">

@@ -43,7 +43,7 @@ const elAzul={"fillNormal":"url(#gradAzul)","stroke":"#0045d2","fillPresionado":
 const elAmarillo={"fillNormal":"url(#gradAmarillo)","stroke":"#f5d913","fillPresionado":"#ff0"}
 let=strokePresionado="#fff"
 let=fillPresionado="#eee"
-const contador=document.getElementById("contador")
+const contador=document.getElementById("contador-Ronda")
 const quienDice=document.getElementById("quienDice")
 const subirRonda=document.getElementById("subirRonda")
 const bajarRonda=document.getElementById("bajarRonda")
@@ -157,7 +157,7 @@ function pintarProgreso(){
     for (let i = 1; i <= ronda; i++){
         progreso.innerHTML+='<div class="progreso__marca radius5 sombra" id="progreso-'+i+'"></div>'
     }
-    contador.innerHTML='<span>Ronda</span>'+ronda
+    contador.innerHTML=ronda
 }
 function llenarArraySimon(){
     for (let i = 1; i <= 53; i++){
@@ -295,6 +295,7 @@ maquinaSimon.addEventListener('click',(e)=>{
     if(!SimonEstaHablando){ //Si Se esta reproduciendo una ronda no se activan los botones
         tiempoJugadaProgreso.classList.remove("lleno")
         tiempoJugadaProgreso.classList.add("vacio")
+         
         let anima =window.setTimeout(()=>{
             if(usuarioEstaRepitiendo){
                 tiempoJugadaProgreso.classList.remove("vacio")
@@ -314,26 +315,21 @@ maquinaSimon.addEventListener('click',(e)=>{
             quitarMarcos()
             console.log("timeoutID:"+timeoutID)
             if(timeoutID>0)clearTimeout(timeoutID)
-            //fillTenia()
+
 
             elbtn=document.getElementById(elSwitch)
-            //strokeTenia=elbtn.getAttribute('stroke')
+
             strokeTenia=elbtn.style.stroke
             fillTenia=elbtn.style.fill
-            // console.log(elbtn.getAttribute('stroke'))
-            console.log("fillTenia----.............................."+fillTenia)
-        // elbtn.setAttribute("stroke", "#fff")
+
             elbtn.style.stroke = "#fff"
             elbtn.style.fill=fillPresionado
-            console.log("entro a timeout")
             audio.play()
 
             timeoutID=window.setTimeout(quitarRemarcado, 800)
-            console.log("paso el timeout")
-        
+      
             if(usuarioEstaRepitiendo){
                 usuarioDiceRonda++
-                console.log("usuarioDiceRonda="+usuarioDiceRonda+"  ha tocado nota:"+usuarioColorTocado+"    Tenia que tocar:"+arraySimonDice[usuarioDiceRonda-1])
                 progresoACambiar=`progreso-${usuarioDiceRonda}`
                 if(usuarioColorTocado==arraySimonDice[usuarioDiceRonda-1]){                  
                     document.getElementById(progresoACambiar).classList.add("progreso__marca--tocadoUsuario")
@@ -343,6 +339,9 @@ maquinaSimon.addEventListener('click',(e)=>{
                     controlarFinDeTransicion=false
                     tiempoJugadaProgreso.classList.remove("lleno")
                     tiempoJugadaProgreso.classList.add("vacio")
+                    quienDice.innerHTML="ERROR!"
+                    barraTiempo.classList.add('oculto')
+                    
                     document.getElementById(progresoACambiar).classList.add("progreso__marca--Error")
                     audio = new Audio('assets/audio/error.mp3');
                     audio.play()
@@ -353,9 +352,7 @@ maquinaSimon.addEventListener('click',(e)=>{
                     quienDice.innerHTML="Bien!"
                     let time1 = setTimeout(actualizaRonda, 2000);
                 }
-
             }
-
         }    
     }
 })
@@ -448,8 +445,12 @@ subirRonda.addEventListener('click', ()=>{
     pintarProgreso()
 })
 function terminoPartida(){
-    document.getElementById("resultado").innerHTML=`Ronda Actual:${ronda-1}, su máxima puntuación fué ${maxPuntuacionUsuario}` 
+    document.getElementById("resultado").innerHTML=""
+    if(ronda>1) document.getElementById("resultado").innerHTML=`Llegó hasta Ronda:${ronda-1}.</br>`
+    
+    document.getElementById("resultado").innerHTML += `Su record está en llegar a ronda ${maxPuntuacionUsuario}.` 
     if(maxPuntuacionUsuario<ronda-1){
+        document.getElementById("resultado").innerHTML += `</br>Enhorabuena, ha superado su marca personal.`
         let userLSRecord="salonFama-"+nomUser.innerHTML
         recordUSER.record=ronda-1
    
