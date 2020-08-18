@@ -3,8 +3,8 @@ body{
   height: 100vh;
 }
 .mainContainer{
-  /* background-color: chocolate; */
-  width: 90%;
+  /* background-color: chocolate; 
+  width: 90%;*/
 
   margin-left: auto;
   margin-right: auto;
@@ -37,7 +37,7 @@ h1 {
   background: rgb(145,42,71);
   background: linear-gradient(111deg, rgba(145,42,71,1) 0%, rgba(222,0,63,1) 19%, rgba(255,255,255,1) 53%, rgba(247,143,0,1) 100%);
   border-radius: 50%;
-  border:4px solid darkslategrey;
+  border:3px solid black;
  
   
 }
@@ -176,7 +176,10 @@ h1 {
 }
 .dia{
   top: 46.6%;
-  left: 71%;
+  left: 62.3%;
+}
+.dia >span{
+  font-size:.8em;
 }
 .mes{
   top: 46.6%;
@@ -386,8 +389,8 @@ h1 {
 }
 @media screen and (max-width: 400px) {
 .reloj{
-  width: 350px;
-  height: 350px;
+  width: 340px;
+  height: 340px;
 }
 .reloj__marcasHoras, .unahora, .dia, .mes, #manecillaHoras, #manecillaMinutos, #manecillaSegundos, .marca {
   position: absolute;
@@ -404,7 +407,7 @@ h1 {
   left: 50.1%;
 }
 .dia{
-  left:70%;
+  left:60%;
   font-size:.9em;
 }
 .mes{

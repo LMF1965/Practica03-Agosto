@@ -1,4 +1,5 @@
 const meses=["Ene.","Feb.","Mar.","Abr.","May.","Jun.","Jul.","Ago.","Sep.","Oct","Nov","Dic."]
+const dias=["Dom.","Lun.","Mar.","Mie.","Jue.","Vie.","Sab."]
 
 const dia=document.getElementById("dia")
 const mes=document.getElementById("mes")
@@ -19,7 +20,8 @@ let x = setInterval(function() {
     {
         dd='0'+dd;
     } 
-    
+    let ddNom=ahora.getDay();
+
     let mm = ahora.getMonth(); 
     let yyyy = ahora.getFullYear();
     let sg=ahora.getSeconds();
@@ -52,9 +54,10 @@ let x = setInterval(function() {
     {
         hh='0'+hh;
     } 
-    hoy = yyyy+'-'+meses[mm]+'-'+dd+"T"+hh+":"+mi+":"+sg;
+    hoy = yyyy+'-'+meses[mm]+'-'+dd+"T"+hh+":"+mi+":"+sg+"  dia Semana:"+dias[ddNom];
+    //console.log(hoy)
 
-    dia.innerHTML=dd
+    dia.innerHTML="<span>"+dias[ddNom]+"</span> "+dd
     mes.innerHTML=meses[mm]
 }, 1000);
   

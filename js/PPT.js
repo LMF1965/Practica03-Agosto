@@ -76,8 +76,8 @@ function iniciaTirada(){
         if(j==3) j=0
         quitaClasesAqueSaca()
 
-        queSacaIzq.src="img/"+valoresJugada[i]+"_Izq.gif"
-        queSacaDer.src="img/"+valoresJugada[j]+"_Der.gif"
+        queSacaIzq.src="img/"+valoresJugada[i]+"_Izq.jpg"
+        queSacaDer.src="img/"+valoresJugada[j]+"_Der.jpg"
         // queSacaIzq.classList.add(`saca${valoresJugada[i]}Izq`)
         // queSacaDer.classList.add(`saca${valoresJugada[j]}Der`)
         //console.log(i)
@@ -134,7 +134,7 @@ function paraAleatorios(){
         console.log("botonesBloqueados:"+botonesBloqueados)
 
         let aleatorioDer = Math.round(Math.random()*2);
-        queSacaDer.src="img/"+valoresJugada[aleatorioDer]+"_Der.gif"
+        queSacaDer.src="img/"+valoresJugada[aleatorioDer]+"_Der.jpg"
         sacoMaquina=valoresJugada[aleatorioDer]
         clearInterval(x)
         
@@ -218,7 +218,7 @@ btnPiedra.addEventListener('click', ()=>{
         botonesBloqueados=true
         sacoHumano="Piedra"
         quitaClasesAqueSaca()
-        queSacaIzq.src="img/Piedra_Izq.gif"
+        queSacaIzq.src="img/Piedra_Izq.jpg"
         paraAleatorios()
         btnTijera.classList.add("noSeleccionado")
         btnPapel.classList.add("noSeleccionado")
@@ -229,7 +229,7 @@ btnPapel.addEventListener('click', ()=>{
         botonesBloqueados=true
         sacoHumano="Papel"
         quitaClasesAqueSaca()
-        queSacaIzq.src="img/Papel_Izq.gif"
+        queSacaIzq.src="img/Papel_Izq.jpg"
         paraAleatorios()
         btnTijera.classList.add("noSeleccionado")
         btnPiedra.classList.add("noSeleccionado")
@@ -240,7 +240,7 @@ btnTijera.addEventListener('click', ()=>{
         botonesBloqueados=true
         sacoHumano="Tijera"
         quitaClasesAqueSaca()
-        queSacaIzq.src="img/Tijera_Izq.gif"
+        queSacaIzq.src="img/Tijera_Izq.jpg"
         paraAleatorios()
         btnPiedra.classList.add("noSeleccionado")
         btnPapel.classList.add("noSeleccionado")

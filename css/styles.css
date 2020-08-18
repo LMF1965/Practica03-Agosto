@@ -1,9 +1,11 @@
 body{
-  background: black;
+  background: radial-gradient(red, transparent);
   background: linear-gradient(360deg, rgba(254,255,254,1) 0%, rgba(224,224,224,0.9838557401812689) 100%);
+  background: linear-gradient(0deg, rgba(228,227,227,1) 0%, rgba(112,106,106,1) 47%, rgba(131,121,121,1) 64%, rgba(32,31,31,1) 100%);
   background-image: url("fondoBody3.png"),url("fondoBody3.jpg");
   background-position-y:center;
   background-repeat: no-repeat, repeat;
+
   font-family: 'Roboto', sans-serif;
   width: 100vw;
   height:100vh;

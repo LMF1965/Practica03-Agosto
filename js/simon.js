@@ -147,7 +147,7 @@ function leerSalonFama(){
         });
         if(filas==0){
             SalonFamaTabla.innerHTML=""
-            SalonFamaTabla.innerHTML+='<div class="sinSalonFama"><img src="img/vacio.png"></div>'
+            SalonFamaTabla.innerHTML+='<div class="sinSalonFama"><img src="img/Vacio.png"></div>'
         }
     }
 
