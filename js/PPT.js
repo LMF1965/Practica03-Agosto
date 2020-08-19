@@ -109,6 +109,7 @@ function verQuienGana(){
         }
 
     }else{
+        tiempoAgotado = false
         resultadoMaquina.src="img/gana.png"
         resultadoMaquina.style.display="block"
         marcadorMaquina++

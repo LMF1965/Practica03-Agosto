@@ -37,7 +37,7 @@ const btnRojo=document.getElementById("btnRojo")
 const btnAzul=document.getElementById("btnAzul")
 const btnAmarillo=document.getElementById("btnAmarillo")
 const btnVerde=document.getElementById("btnVerde")
-const elVerde={"fillNormal":"url(#gradVerde)","stroke":"#009400","fillPresionado":"#0beb0b"}
+const elVerde={"fillNormal":"url(#gradVerde)","stroke":"#00ff00","fillPresionado":"#0beb0b"}
 const elRojo={"fillNormal":"url(#gradRojo)","stroke":"#e34618","fillPresionado":"#f00"}
 const elAzul={"fillNormal":"url(#gradAzul)","stroke":"#0045d2","fillPresionado":"#00f"}
 const elAmarillo={"fillNormal":"url(#gradAmarillo)","stroke":"#f5d913","fillPresionado":"#ff0"}
@@ -69,6 +69,7 @@ let ronda=1
 let usuarioDiceRonda=1
 const barraTiempo=document.getElementById("barraTiempo")
 let controlarFinDeTransicion=false
+let errorUsuarioDice=false
 
 const validateUsername = (username) => {
     //Alphanumeric string that may include _ and – having a length of 3 to 16 characters –
@@ -158,6 +159,7 @@ function pintarProgreso(){
         progreso.innerHTML+='<div class="progreso__marca radius5 sombra" id="progreso-'+i+'"></div>'
     }
     contador.innerHTML=ronda
+    btnEmpezarRonda.value="Empezar Ronda "+ronda
 }
 function llenarArraySimon(){
     for (let i = 1; i <= 53; i++){
@@ -333,10 +335,12 @@ maquinaSimon.addEventListener('click',(e)=>{
                 progresoACambiar=`progreso-${usuarioDiceRonda}`
                 if(usuarioColorTocado==arraySimonDice[usuarioDiceRonda-1]){                  
                     document.getElementById(progresoACambiar).classList.add("progreso__marca--tocadoUsuario")
+
                     // tiempoJugadaProgreso.classList.remove("vacio")
                     // tiempoJugadaProgreso.classList.add("lleno")
                 } else{
                     controlarFinDeTransicion=false
+                    errorUsuarioDice=true
                     tiempoJugadaProgreso.classList.remove("lleno")
                     tiempoJugadaProgreso.classList.add("vacio")
                     quienDice.innerHTML="ERROR!"
@@ -347,7 +351,7 @@ maquinaSimon.addEventListener('click',(e)=>{
                     audio.play()
                     terminoPartida()
                 }
-                if(usuarioDiceRonda==ronda){
+                if(!errorUsuarioDice && usuarioDiceRonda==ronda){
                     usuarioEstaRepitiendo=false
                     quienDice.innerHTML="Bien!"
                     let time1 = setTimeout(actualizaRonda, 2000);
@@ -411,6 +415,8 @@ jugarOtraVez.addEventListener('click', ()=>{
     btnEmpezarRonda.classList.remove("oculto")
 
     ronda=1
+    quienDice.innerHTML="&nbsp;"
+    errorUsuarioDice=false
     btnEmpezarRonda.value="Empezar Ronda"
     leerSalonFama()
     OrdenarImprimirSalonFama()
@@ -466,6 +472,7 @@ function terminoPartida(){
 }
 tiempoJugadaProgreso.addEventListener("transitionend",()=>{
     audio = new Audio('assets/audio/error.mp3');
+    quienDice.innerHTML="Time Out"
     audio.play()
     terminoPartida()
 })
