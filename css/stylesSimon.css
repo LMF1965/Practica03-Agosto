@@ -1,3 +1,6 @@
+body{
+    overflow: auto;
+  }
 h1{
     margin-top:7px;
 }
@@ -290,7 +293,7 @@ margin-top:7px;
 }
 .tiempoJugada{
     width: 360px;
-    height: 25px;
+    height: 13px;
     background: rgba(235,233,249,1);    
     background: linear-gradient(to bottom, rgba(235,233,249,1) 0%, rgba(216,208,239,1) 50%, rgba(206,199,236,1) 51%, rgba(193,191,234,1) 100%);
     border: 1px solid grey;
@@ -313,13 +316,23 @@ margin-top:7px;
 }
 
 @media screen and (max-width: 768px) {
-    .containerSimon {
-      grid-template-columns: 1fr;
-    }
-  }
+.containerSimon {
+    grid-template-columns: 1fr;
+}
+}
 @media screen and (max-width: 400px) {
-    #maquinaSimon{
-        width:350px;
-    }
+#maquinaSimon{
+    width:350px;
+    margin-top: -46px;
+}
+.contenedorContador{
+    top: 218px;
+}
+#btnEmpezarRonda {
+top: 0px;
+}
+.tiempoJugada {
+    width: 340px;
+}
 }
 
