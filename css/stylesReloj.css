@@ -4,9 +4,6 @@ body{
   overflow: auto;
 }
 .mainContainer{
-  /* background-color: chocolate; 
-  width: 90%;*/
-
   margin-left: auto;
   margin-right: auto;
   display: flex;
@@ -39,15 +36,12 @@ h1 {
   background: linear-gradient(111deg, rgba(145,42,71,1) 0%, rgba(222,0,63,1) 19%, rgba(255,255,255,1) 53%, rgba(247,143,0,1) 100%);
   border-radius: 50%;
   border:3px solid black;
- 
-  
 }
 .reloj__marcasHoras, .unahora, .ejeVertical, .ejeHorizontal, .dia, .mes, #manecillaHoras, #manecillaMinutos, #manecillaSegundos, .marca{
   position: absolute;
   display: block;
   font-size: 1.3em;
   font-weight: bold;
-
 }
 .reloj__marcasHoras{
   width: 85%;
@@ -357,7 +351,6 @@ h1 {
   background-color:rgb(182, 1, 1);
   clip-path: polygon(49.7% 5%, 50.3% 5%, 51% 57%, 49% 57%);
   transform: rotate(0deg);
-
 }
 .centro{
   position: absolute;

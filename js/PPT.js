@@ -65,10 +65,7 @@ function quitaClasesAqueSaca(){
 
 
 function iniciaTirada(){
-    // tiempoJugadaProgreso.classList.remove("vacio")
      tiempoJugadaProgreso.classList.add("lleno")
-    //tiempoJugadaProgreso.style.width=100%
-    //console.log("iniciaTirada()    tiempoJugadaProgreso.style.width:"+tiempoJugadaProgreso.style.width)
     x = setInterval(function() {
         i++
         if(i==3) i=0
@@ -77,12 +74,7 @@ function iniciaTirada(){
         quitaClasesAqueSaca()
 
         queSacaIzq.src="img/"+valoresJugada[i]+"_Izq.jpg"
-        queSacaDer.src="img/"+valoresJugada[j]+"_Der.jpg"
-        // queSacaIzq.classList.add(`saca${valoresJugada[i]}Izq`)
-        // queSacaDer.classList.add(`saca${valoresJugada[j]}Der`)
-        //console.log(i)
-        
-
+        queSacaDer.src="img/"+valoresJugada[j]+"_Der.jpg"   
     },100); 
 }
 function verQuienGana(){
@@ -143,22 +135,14 @@ function paraAleatorios(){
         tiempoJugadaProgreso.classList.remove("lleno")
         tiempoJugadaProgreso.classList.add("vacio")
 
-        // let computedStyle = window.getComputedStyle(tiempoJugadaProgreso)
-        // let actualWithDeProgreso = computedStyle.getPropertyValue('width')
-        // tiempoJugadaProgreso.style.width = actualWithDeProgreso
-
-        verQuienGana()
-    
+        verQuienGana()  
 }
 function pintarMarcador(){
-    
-
     marcadorIzq.innerHTML=''
     marcadorDer.innerHTML=''
     resultadoHumano.style.display="none"
     resultadoMaquina.style.display="none"
-
-    
+   
     queSacaIzq.src="img/FondoPPT.jpg"
     queSacaDer.src="img/FondoPPT.jpg"
 
@@ -169,7 +153,6 @@ function pintarMarcador(){
         marcadorIzq.innerHTML+=`<div class="marcador__marca radius5 sombra" id="marcadorIzq-${j}"></div>`
         marcadorDer.innerHTML+=`<div class="marcador__marca radius5 sombra" id="marcadorDer-${j}"></div>`
     }
-
 }
 function volverAIndex(){
     window.location.href="index.html";
@@ -263,22 +246,14 @@ btnJugar.addEventListener('click', ()=>{
         resultadoHumano.style.display="none"
         resultadoMaquina.style.display="none"
 
-
         tiempoJugadaProgreso.classList.add("vacio")
         tiempoJugadaProgreso.classList.add("lleno")
-       
 
-        // tiempoJugadaProgreso.style.width=0
-        console.log("tiempoJugadaProgreso.style.width:"+tiempoJugadaProgreso.style.width)
-        //setTimeout(function(){ tiempoJugadaProgreso.style.transition="width 5s" }, 1000);
         sacoHumano=""
         sacoMaquina=""
         inicializarImagenesTirada()
         iniciaTirada()  
-        // tiempoJugadaProgreso.classList.remove("sinTransicion")
     }
-    
-    console.log(btnJugar.value)
 })
 // quito el fondo rojo de aviso de error si lo tiene
 user.addEventListener('focusin', ()=>{
@@ -304,7 +279,6 @@ btnLogin.addEventListener('click',(e)=>{
         modal.classList.remove('show')
         pintarMarcador()
     }
-
 })
 btnVolverPodium.addEventListener('click',()=>{
     volverAIndex()

@@ -2,7 +2,7 @@ body{
   background: radial-gradient(red, transparent);
   background: linear-gradient(360deg, rgba(254,255,254,1) 0%, rgba(224,224,224,0.9838557401812689) 100%);
   background: linear-gradient(0deg, rgba(228,227,227,1) 0%, rgba(112,106,106,1) 47%, rgba(131,121,121,1) 64%, rgba(32,31,31,1) 100%);
-  background-image: url("fondoBody352.png"),url("fondoBody3f2.png"),url("fondoRojo2.jpg");
+  background-image: url("fondoBody352222.png"),url("fondoBody3f2.png"),url("fondoRojo2.jpg");
   background-position-y:center;
   background-repeat: no-repeat, repeat, repeat;
   background-size: auto, auto, contain;
@@ -119,10 +119,8 @@ filter: drop-shadow(5px 5px 5px #222);
   h1{
     font-size: 1.5em;
   }
-
   .parteControl{
     grid-column: 1/-1;
-
   }
 }
 
