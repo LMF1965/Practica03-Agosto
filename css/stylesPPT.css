@@ -65,6 +65,7 @@ h1{
   #avisoError{
     background: white;
     color: red;
+    font-size:.8em;
     text-align: center;
     width: 98%;
     margin: 3px auto;

@@ -11,7 +11,8 @@ const ganadorImg = document.getElementById("ganadorImg")
 const ganadorNom = document.getElementById("ganadorNom")
 const btnLogin=document.getElementById("btnLogin")
 const formIsValid={
-    usuario : false
+    usuario : false,
+    partidas:0
 }
 const user=document.getElementById("user")
 const partidas=document.getElementById("partidas")
@@ -159,6 +160,7 @@ function volverAIndex(){
 }
 function mostrarLogin(){
     modal.classList.add('show')
+    user.focus()
 }
 function verUsuarioLogeado(){
     let userPPT = JSON.parse(localStorage.getItem('userPPT'));
@@ -195,6 +197,7 @@ btnLogout.addEventListener('click', ()=>{
     localStorage.removeItem('userPPT')
     modal.classList.remove('oculto')
     modal.classList.add('show')
+    user.focus()
 })
 
 btnPiedra.addEventListener('click', ()=>{
@@ -260,12 +263,22 @@ user.addEventListener('focusin', ()=>{
     user.classList.remove('errorLogin');
     avisoError.classList.add("oculto")
 }) 
+user.addEventListener('keyup', (e)=>{
+    if(e.key==="Enter") partidas.focus()
+})
+partidas.addEventListener('keyup', (e)=>{
+    if(e.key==="Enter") aJugar()
+})
 btnLogin.addEventListener('click',(e)=>{
+    aJugar()
+})
+function aJugar(){
     formIsValid.usuario = validateUsername(user.value);
     if(formIsValid.usuario == false){
         user.classList.add('errorLogin'); 
         avisoError.classList.remove("oculto")
     }else{
+        if(partidas.value=="0" || isNaN(parseInt(partidas.value)) || partidas.value=="") partidas.value=3
         nomUser.innerHTML=user.value 
         userAvatar.innerHTML=user.value
         seGanaCon=partidas.value
@@ -279,7 +292,7 @@ btnLogin.addEventListener('click',(e)=>{
         modal.classList.remove('show')
         pintarMarcador()
     }
-})
+}
 btnVolverPodium.addEventListener('click',()=>{
     volverAIndex()
 })

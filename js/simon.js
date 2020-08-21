@@ -80,6 +80,7 @@ const validateUsername = (username) => {
 
 function mostrarLogin(){
     modal.classList.add('show')
+    user.focus()
 }
 function verUsuarioLogeado(){
     let userLS = JSON.parse(localStorage.getItem('userSIMON'));
@@ -162,6 +163,7 @@ function pintarProgreso(){
     btnEmpezarRonda.value="Empezar Ronda "+ronda
 }
 function llenarArraySimon(){ //Lleno el array a reproducir con 75 valores
+    arraySimonDice=[]
     for (let i = 1; i <= 75; i++){
         let aleatorio = Math.round(Math.random()*3);
         arraySimonDice.push(aleatorio)
@@ -355,6 +357,40 @@ maquinaSimon.addEventListener('click',(e)=>{
 })
 
 btnLogin.addEventListener('click',(e)=>{
+    aJugar()
+})
+
+btnVolverIndex.addEventListener('click', ()=>{
+    volverAIndex()
+})
+btnVolver.addEventListener('click', ()=>{
+    volverAIndex()
+})
+btnVolverFin.addEventListener('click', ()=>{
+    volverAIndex()
+})
+jugarOtraVez.addEventListener('click', ()=>{
+    finPartida.classList.remove('show')
+    finPartida.classList.add('oculto')
+    tiempoJugadaProgreso.classList.remove("lleno")
+    tiempoJugadaProgreso.classList.add("vacio")
+    barraTiempo.classList.add('oculto')
+    btnEmpezarRonda.classList.remove("oculto")
+
+    ronda=1
+    quienDice.innerHTML="&nbsp;"
+    errorUsuarioDice=false
+    btnEmpezarRonda.value="Empezar Ronda"
+    leerSalonFama()
+    OrdenarImprimirSalonFama()
+    pintarProgreso()
+    llenarArraySimon()
+})
+function volverAIndex(){
+    window.location.href="index.html";
+}
+function aJugar(){
+
     formIsValid.usuario = validateUsername(user.value);
     if(formIsValid.usuario == false){
         user.classList.add('errorLogin'); 
@@ -382,35 +418,6 @@ btnLogin.addEventListener('click',(e)=>{
         }
         leerSalonFama()
     }
-})
-
-btnVolverIndex.addEventListener('click', ()=>{
-    volverAIndex()
-})
-btnVolver.addEventListener('click', ()=>{
-    volverAIndex()
-})
-btnVolverFin.addEventListener('click', ()=>{
-    volverAIndex()
-})
-jugarOtraVez.addEventListener('click', ()=>{
-    finPartida.classList.remove('show')
-    finPartida.classList.add('oculto')
-    tiempoJugadaProgreso.classList.remove("lleno")
-    tiempoJugadaProgreso.classList.add("vacio")
-    barraTiempo.classList.add('oculto')
-    btnEmpezarRonda.classList.remove("oculto")
-
-    ronda=1
-    quienDice.innerHTML="&nbsp;"
-    errorUsuarioDice=false
-    btnEmpezarRonda.value="Empezar Ronda"
-    leerSalonFama()
-    OrdenarImprimirSalonFama()
-    pintarProgreso()
-})
-function volverAIndex(){
-    window.location.href="index.html";
 }
 
 // quito el fondo rojo de aviso de error si lo tiene
@@ -418,6 +425,9 @@ user.addEventListener('focusin', ()=>{
     user.classList.remove('errorLogin');
     avisoError.classList.add("oculto")
 }) 
+user.addEventListener('keyup', (e)=>{
+if(e.key==="Enter") aJugar()
+})
 btnLogout.addEventListener('click', ()=>{
     // identificado.classList.remove('show')
     // identificado.classList.add('oculto')
@@ -426,6 +436,7 @@ btnLogout.addEventListener('click', ()=>{
     localStorage.removeItem('userSIMON')
     modal.classList.remove('oculto')
     modal.classList.add('show')
+    user.focus()
 })
 bajarRonda.addEventListener('click', ()=>{
     if (ronda>1) {
@@ -439,9 +450,18 @@ subirRonda.addEventListener('click', ()=>{
 })
 function terminoPartida(){
     document.getElementById("resultado").innerHTML=""
-    if(ronda>1) document.getElementById("resultado").innerHTML=`Llegó hasta Ronda:${ronda-1}.</br>`
-    
-    document.getElementById("resultado").innerHTML += `Su record está en llegar a ronda ${maxPuntuacionUsuario}.` 
+    if(ronda>1){
+        document.getElementById("resultado").innerHTML=`Llegó hasta Ronda:${ronda-1}.</br>`
+    } else {
+        document.getElementById("resultado").innerHTML=`No ha superado ningúna ronda.</br>`
+    } 
+
+    if(maxPuntuacionUsuario>0){
+        document.getElementById("resultado").innerHTML += `Su record está en llegar a ronda ${maxPuntuacionUsuario}.`
+    } else {
+        document.getElementById("resultado").innerHTML += `No tenemos record anterior.`
+    }
+
     if(maxPuntuacionUsuario<ronda-1){
         document.getElementById("resultado").innerHTML += `</br>Enhorabuena, ha superado su marca personal.`
         let userLSRecord="salonFama-"+nomUser.innerHTML
