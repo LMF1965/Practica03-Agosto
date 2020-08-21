@@ -6,7 +6,7 @@ let recordUSER={
 };
 const equivalenciaColores=["btnAmarillo","btnVerde","btnRojo","btnAzul"]
 let arraySalonFama=[]
-let arraySimonDice=[0,1,2,3]
+let arraySimonDice=[] 
 
 let intervalId=0
 
@@ -120,37 +120,37 @@ function leerSalonFama(){
       }
     }
 }   
-    function OrdenarImprimirSalonFama(){
-        arraySalonFama.sort(compare)
+function OrdenarImprimirSalonFama(){
+    arraySalonFama.sort(compare)
 
-        const SalonFamaTabla=document.getElementById('SalonFamaTabla')
-        SalonFamaTabla.innerHTML=""
-        SalonFamaTabla.innerHTML+='<div class="salon__cabecera salon__cabeceraUsuario bold">Nombre</div>'
-        SalonFamaTabla.innerHTML+='<div class="salon__cabecera bold">Rondas</div>'
+    const SalonFamaTabla=document.getElementById('SalonFamaTabla')
+    SalonFamaTabla.innerHTML=""
+    SalonFamaTabla.innerHTML+='<div class="salon__cabecera salon__cabeceraUsuario bold">Nombre</div>'
+    SalonFamaTabla.innerHTML+='<div class="salon__cabecera bold">Rondas</div>'
 
+    let filas=arraySalonFama.length
+
+    arraySalonFama.forEach(function(fila, indice) {
         let filas=arraySalonFama.length
+        let sinBorderBottom=""
+        let fondoClaro=""
 
-        arraySalonFama.forEach(function(fila, indice) {
-            let filas=arraySalonFama.length
-            let sinBorderBottom=""
-            let fondoClaro=""
+        if(filas==indice+1) sinBorderBottom="sinBorderBottom"
+        if(indice%2==0) fondoClaro=" fondoClaro "
+        
+        SalonFamaTabla.innerHTML+='<div class="salon__cabecera salon__cabeceraUsuario '+ fondoClaro + sinBorderBottom+'">'+arraySalonFama[indice][0]+'</div>'
+        SalonFamaTabla.innerHTML+='<div class="salon__cabecera '+ fondoClaro + sinBorderBottom+'">'+arraySalonFama[indice][1]+'</div>'
 
-            if(filas==indice+1) sinBorderBottom="sinBorderBottom"
-            if(indice%2==0) fondoClaro=" fondoClaro "
-            
-            SalonFamaTabla.innerHTML+='<div class="salon__cabecera salon__cabeceraUsuario '+ fondoClaro + sinBorderBottom+'">'+arraySalonFama[indice][0]+'</div>'
-            SalonFamaTabla.innerHTML+='<div class="salon__cabecera '+ fondoClaro + sinBorderBottom+'">'+arraySalonFama[indice][1]+'</div>'
-
-            if(nomUser.innerHTML==arraySalonFama[indice][0]){
-                saludo.innerHTML=`Hola ${arraySalonFama[indice][0]}`
-                if(arraySalonFama[indice][1]>"0") saludo.innerHTML+=`, tu máxima ronda fué la ${arraySalonFama[indice][1]}ª`
-            }
-        });
-        if(filas==0){
-            SalonFamaTabla.innerHTML=""
-            SalonFamaTabla.innerHTML+='<div class="sinSalonFama"><img src="img/Vacio.png"></div>'
+        if(nomUser.innerHTML==arraySalonFama[indice][0]){
+            saludo.innerHTML=`Hola ${arraySalonFama[indice][0]}`
+            if(arraySalonFama[indice][1]>"0") saludo.innerHTML+=`, tu máxima ronda fué la ${arraySalonFama[indice][1]}ª`
         }
+    });
+    if(filas==0){
+        SalonFamaTabla.innerHTML=""
+        SalonFamaTabla.innerHTML+='<div class="sinSalonFama"><img src="img/Vacio.png"></div>'
     }
+}
 
 function pintarProgreso(){
     progreso.innerHTML=''
@@ -161,13 +161,12 @@ function pintarProgreso(){
     contador.innerHTML=ronda
     btnEmpezarRonda.value="Empezar Ronda "+ronda
 }
-function llenarArraySimon(){
-    for (let i = 1; i <= 53; i++){
+function llenarArraySimon(){ //Lleno el array a reproducir con 75 valores
+    for (let i = 1; i <= 75; i++){
         let aleatorio = Math.round(Math.random()*3);
         arraySimonDice.push(aleatorio)
     }
     barraTiempo.classList.add("oculto")
-    console.log(arraySimonDice)
 }
 function actualizaRonda(){
     quitarMarcos()
@@ -207,14 +206,10 @@ function simonDice(cuantasToco) {
 
         elbtn.style.stroke=strokePresionado
         elbtn.style.fill=fillPresionado
-
-           
-        if(tocandoNota==cuantasToco){
-            
-             clearInterval(intervalId)
-        
-             SimonEstaHablando=false
-             
+          
+        if(tocandoNota==cuantasToco){           
+             clearInterval(intervalId)      
+             SimonEstaHablando=false          
              let time2 = setTimeout(()=>{
                 quitarMarcos()
                 usuarioDice()}
@@ -305,13 +300,11 @@ maquinaSimon.addEventListener('click',(e)=>{
             }
         }, 400)
 
-
         console.log("Quitar animacionBarra")
         elSwitch=e.target.id
         pulsoEnBotonSimon=false
     
         tocarSonido(elSwitch)
-
     
         if(pulsoEnBotonSimon) { // verifica si pulso en algun boton o sobre la imagen
             quitarMarcos()
@@ -376,14 +369,10 @@ btnLogin.addEventListener('click',(e)=>{
         
         // Crea Usuario logeado en localStorage
         localStorage.setItem('userSIMON',JSON.stringify(userSIMON));
-
         modal.classList.remove('show')
 
-    // Guardo usuario en localStorage
-       
+        // Guardo usuario en localStorage
         let userLSRecord=`salonFama-${userSIMON.user}`
-
-        console.log("userLSRecord:..............................................."+userLSRecord)
 
         let userLSExiste = JSON.parse(localStorage.getItem(userLSRecord));
         if(userLSExiste==null){
@@ -392,9 +381,7 @@ btnLogin.addEventListener('click',(e)=>{
            console.log("no EXISTTTTTTE")
         }
         leerSalonFama()
-
     }
-
 })
 
 btnVolverIndex.addEventListener('click', ()=>{
@@ -466,8 +453,7 @@ function terminoPartida(){
     finPartida.classList.remove('oculto')
     finPartida.classList.add('show')
     if(controlarFinDeTransicion) {
-        controlarFinDeTransicion=false
-       
+        controlarFinDeTransicion=false     
     }
 }
 tiempoJugadaProgreso.addEventListener("transitionend",()=>{
